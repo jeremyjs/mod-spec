@@ -40,7 +40,7 @@ The language supports programming in your native language.
 
 ## Modules, Libraries, Programs, & Services
 
-Every File in the Codebase is a Module. Every Module is either a Library, Program, or Service. Only a Program or Service may be run. A Program or Service must have a Main Function. A Library can be loaded but has no Main Function. A Simple Program is meant to complete in a finite amount of time, producing side-effects (Events) or results (Values). A Service is a special kind of Program meant to run indefinitely and continue to perform tasks, subscribe to Events, or respond to external Requests until stopped.
+Every File in the language is either a Function or a Module. Every Module is either a Library, Program, or Service. Only a Program or Service may be run. A Program or Service must have a Main Function. A Library can be loaded but has no Main Function. A simple Program is meant to complete in a finite amount of time, producing side-effects (Events) or results (Values). A Service is a special kind of Program meant to run indefinitely and continue to perform tasks, subscribe to Events, or respond to external Requests until stopped.
 
 ## Packages
 
@@ -53,19 +53,19 @@ Base Types
 - Function (Operator)
 - Value (Literal or Expression)
   - Boolean
-  - Number (see: #Numbers)
-  - Char
+  - Number (see #Numbers)
+  - Char (Unicode)
   - String (List of Char)
   - Regex
 - Data Structure
   - Set
-  - List (Array / Collection)
-  - Map (Object / Dictionary)
-  - Tuple (Array)
+  - List
+  - Tuple
+  - Map
   - Graph
 - Event
 
-A Function Signature must be strictly typed (i.e. each parameter passed to the Function Call must be of the correct Type as defined by the Function Signature / inferred from the Function; the Return Value of a Function must be of the same Type as defined by the Function Signature / inferred from the Function). Types may be inferred whenever possible. Properties or Values within Types may be optional. Lists / Collections require that items are all of the same Type. Tuples may have items of different Types. Empty Values are allowed, but rarely useful.
+A Function Signature must be strictly typed (i.e. each parameter passed to the Function Call must be of the correct Type as defined by the Function Signature / inferred from the Function; the Return Value of a Function must be of the same Type as defined by the Function Signature / inferred from the Function). Types may be inferred whenever possible. Properties or Values within Types may be optional. Lists require that all items are of the same Type. Tuples may have items of different Types. Empty Values are allowed, but rarely useful.
 
 New Composite Types or Alias Types may be specified within any Module.
 
@@ -77,7 +77,7 @@ Graph Node Values must all have the same Type.
 
 ## Functions
 
-The language supports Function-Level Programming [wikipedia](https://en.wikipedia.org/wiki/Function-level_programming).
+The language supports [Function-Level Programming](https://en.wikipedia.org/wiki/Function-level_programming).
 
 A Function is defined as a List of Operations (an Operation is a Function Call or Expression. An Expression is a statement which evaluates to a Value or Event Publication). Side-effects are Event Publications. Errors are Event Publications. The Return Value of a Function is always a Tuple of (Value, List of Event Publications). Event Publications may be emitted as they are evaluated (Output Stream).
 
@@ -89,7 +89,7 @@ Function Signatures support spread of List or Object (named parameters). Functio
 
 Mathematics in programming has one primary tradeoff. Either the use case prefers accuracy / precision and is willing to trade off performance, or the use case prefers performance and is willing to trade off accuracy / precision. In the rare case the use case is not willing to trade off either, prefer accuracy / precision over performance.
 
-There are four Number Types: Integer, Rational, Decimal, and [Binary Floating Point](https://en.wikipedia.org/wiki/IEEE_754)
+The language has four Number Types: Integer, Rational, Decimal, and [Binary Floating Point](https://en.wikipedia.org/wiki/IEEE_754)
 
 These types are inferred by default but may be explicitly ascribed to Literal Values to enforce accuracy / precision or performance requirements.
 
