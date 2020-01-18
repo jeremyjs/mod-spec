@@ -85,6 +85,14 @@ A Function is defined as a List of Operations (an Operation is a Function Call o
 
 Function Signatures support spread of List or Object (named parameters). Function Signatures support default values.
 
+### Generators
+
+Functions should have a Generator / Enumerator capability.
+
+### Async / Await
+
+Functions should have an Async / Await capability.
+
 ## Numbers
 
 Mathematics in programming has one primary tradeoff. Either the use case prefers accuracy / precision and is willing to trade off performance, or the use case prefers performance and is willing to trade off accuracy / precision. In the rare case the use case is not willing to trade off either, prefer accuracy / precision over performance.
@@ -121,23 +129,27 @@ TODO
 
 TODO
 
-## Maps
+## Tuples
 
 TODO
 
-## Tuples
+## Maps
 
 TODO
 
 ## Graphs
 
-TODO
+Graph is used to implement State Machines and Dependency Graphs and therefore included in Core.
 
 ## Streams
 
 Streams are an asynchronous communication channel.
 
 TODO: add implementation details.
+
+### Under Consideration
+
+Streams should be a core feature allowing for lazy evaluation, to be combined with generators, etc.
 
 ## Network
 
@@ -147,7 +159,7 @@ A Program may listen on a port or ports for Requests and reply with Responses. A
 
 A Program may emit Events or publish them to Topics. A Program may subscribe to Topics.
 
-### Event Loop
+## Event Loop
 
 TODO: research the concept of "Event Loop" for usefulness
 
@@ -164,3 +176,11 @@ TODO
 ## Testing
 
 TODO: We want the most powerful testing somehow.
+
+## Useful Packages
+
+These would be the first several packages created.
+
+### Tasks & Workers
+
+Workers are Services designed to run queued background Tasks. Tasks can be Scheduled, orchestrated by dependency Graphs, run with retries, and have a success or error state.
