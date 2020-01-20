@@ -6,6 +6,30 @@ The intent of the Mod Spec is that if you were to implement all features from th
 
 By enforcing this distinction between the Mod Spec and Mod itself, we are able to iterate on the programming language design independent of any specific constraints or implementation decisions inherent in the existing implementation of Mod. Ideally, readers will understand the implications of the Mod Spec and propose improvements or create an alternative spec describing a language more powerful than Mod. Ideally, existing languages will be inspired by features described within the Mod Spec to improve and expand upon their existing language features.
 
+## Motivation
+
+The language is inspired to be one which can be dropped in as a replacement to Node.js, Python, Ruby, etc. for building anything from a one-liner shell script to a rich microservice ecosystem to support complex cross-platform SaaS applications.
+
+Its concept of "powerful" is inspired by the concept of brevity.
+
+"Another goal I had while writing Arc was to continue as long as possible in the mode in which McCarthy began. In his original 1960 paper he built Lisp up from "axioms" like car, cdr, and cons, through "theorems" like assoc and mapcar. [1] There must be some optimal path all the way up to a complete language. What is it? McCarthy didn't get very far along it in his paper. And after that the language passed into the hands of his grad students, who at the time were more worried about the exigencies of making an interpreter run on the IBM 704 than continuing McCarthy's axiomatic approach. We've been living with their hacks ever since. Steele and Sussman tried to start over when they first began working on Scheme, but they seem to have been practically the only ones. And they made, at least from the point of view of brevity/power, some serious mistakes early on." ~ Paul Graham, http://paulgraham.com/arcchallenge.html
+
+The language goes further than brevity, to empower its users to create elegant code. Terse where desired, while never sacrificing accessibility to beginners. The code should not rot. This is one of the most difficult ideals to materialize and one of the most foundational.
+
+### Priciples of the Language
+
+- Modularity
+- Extensibility
+- Elegance / Expressiveness
+  - Reading any Function should reveal its use, even to a beginner
+  - The code should be elegant to an expert and accessible to a beginner
+- Interoperability
+- Capability
+
+#### Under Consideration
+
+- Longevity (The code should not rot)
+
 ## Table of Contents
 
 - Unicode
@@ -19,8 +43,9 @@ By enforcing this distinction between the Mod Spec and Mod itself, we are able t
     - Strings
     - Regex
   - Data Structures
-    - Sets
     - Lists
+    - Collections
+    - Sets
     - Maps
     - Tuples
     - Graphs
@@ -58,9 +83,9 @@ Base Types
   - String (List of Char)
   - Regex
 - Data Structure
-  - Set
   - List
-  - Tuple
+  - Collection
+  - Set
   - Map
   - Graph
 - Event
@@ -121,15 +146,21 @@ String is implemented as List of Char.
 
 TODO
 
-## Sets
-
-TODO
-
 ## Lists
 
+A List can contain items of any Type.
+
 TODO
 
-## Tuples
+## Collections
+
+A Collection is a List in which all items are of the same Type.
+
+TODO
+
+## Sets
+
+A Set is a Collection where all items are unique with respect to each other.
 
 TODO
 
@@ -150,6 +181,12 @@ TODO: add implementation details.
 ### Under Consideration
 
 Streams should be a core feature allowing for lazy evaluation, to be combined with generators, etc.
+
+## File System
+
+### Under Consideration
+
+Unified interface for network and file IO?
 
 ## Network
 
